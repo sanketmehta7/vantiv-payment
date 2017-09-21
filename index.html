@@ -35,7 +35,7 @@
         }else{
          var param = location.hash.split("id=");
          if(param.length==2 && param[1]!=""){
-          $('<form method="post" action="https://hc.mercurycert.net/mobile/mCheckout.aspx"><input type="hidden" name="PaymentID" value="'+param[1]+'"/></form>').appendTo('body').submit();
+          $('<form method="post" action="https://hc.mercurycert.net/Checkout.aspx"><input type="hidden" name="PaymentID" value="'+param[1]+'"/></form>').appendTo('body').submit();
          }else{
           $("#msg").html("Invalid Payment Id Passed.");
           $("h1").html("Oops...");
