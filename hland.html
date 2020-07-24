@@ -22,7 +22,7 @@
       var hObj = null;
       function initPayform(){
         hObj = new Heartland.HPS({
-            publicKey: publicKey,
+            publicKey: location.hash.split("="),
             type: 'iframe',
             fields: {
                 cardNumber: {
@@ -60,18 +60,18 @@
       <form type="post">
         <div class="row">
           <div class="lab">Card Number</div>
-          <div class="inp"><input type="text" id="iframesCardNumber"/></div>
+          <div class="inp"><div type="text" id="iframesCardNumber"></div></div>
         </div>
         <div class="row">
           <div class="lab">Expiration</div>
-          <div class="inp"><input type="text" id="iframesCardExpiration"/></div>
+          <div class="inp"><div type="text" id="iframesCardExpiration"></div></div>
         </div>
         <div class="row">
           <div class="lab">CVV</div>
-          <div class="inp"><input type="text" id="iframesCardCvv"/></div>
+          <div class="inp"><div type="text" id="iframesCardCvv"></div></div>
         </div>
         <div class="row">
-          <div class="inp"><input type="submit" id="process-heartland" value="Submit"/></div>
+          <div class="inp"><div type="submit" id="process-heartland" value="Submit"></div></div>
         </div>
       </form>
     </div>
