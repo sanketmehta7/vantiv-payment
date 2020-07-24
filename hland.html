@@ -20,6 +20,49 @@
         document.head.appendChild(script);
       }
       var hObj = null;
+      window.heartlandCss = {
+  'input[type=text],input[type=tel]': {
+    'box-sizing':'border-box',
+    'display': 'block',
+    'width': '100%',
+    'height': '34px',
+    'padding': '6px 12px',
+    'font-size': '14px',
+    'line-height': '1.42857143',
+    'color': '#555',
+    'background-color': '#fff',
+    'background-image': 'none',
+    'border': '1px solid #ccc',
+    'border-radius': '4px',
+    '-webkit-box-shadow': 'inset 0 1px 1px rgba(0,0,0,.075)',
+    'box-shadow': 'inset 0 1px 1px rgba(0,0,0,.075)',
+    '-webkit-transition': 'border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s',
+    '-o-transition': 'border-color ease-in-out .15s,box-shadow ease-in-out .15s',
+    'transition': 'border-color ease-in-out .15s,box-shadow ease-in-out .15s'
+  },
+  'input[type=text]:focus,input[type=tel]:focus': {
+    'border-color': '#66afe9',
+    'outline': '0',
+    '-webkit-box-shadow': 'inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)',
+    'box-shadow': 'inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)'
+  },
+  'input[type=submit]' : {
+    'min-height': '48px',
+    'opacity': '1',
+    'background': 'linear-gradient(to bottom, #da291c 0%, #da291c 100%)',
+    'width': '80%',
+    'margin': 'auto',
+    'max-width': '200px',
+    'border-radius': '41px',
+    'margin-bottom': '20px',
+    'line-height': '12px',
+    'display': 'block',
+    'color': '#fff',
+    'cursor': 'pointer',
+    'border-width': '1px',
+    'margin-top': '10px',
+    'border-style': 'solid'
+  }};
       function initPayform(){
         hObj = new Heartland.HPS({
             publicKey: location.hash.split("="),
@@ -57,6 +100,7 @@
   </head>
   <body >
     <div>
+      CC Details
       <form type="post">
         <div class="row">
           <div class="lab">Card Number</div>
