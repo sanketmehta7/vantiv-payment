@@ -1,1 +1,79 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <script type="text/javascript">
+      if(!document.getElementById('hScript')){
+        var script = document.createElement("script");
+        script.id = "hScript";
+        script.type = "text/javascript";
+        script.src = 'https://api2.heartlandportico.com/SecureSubmit.v1/token/2.1/securesubmit.js';
+        script.onload = function(){
+          setTimeout(function(){
+            initPayform();
+          },1000);
+        }
+        document.head.appendChild(script);
+      }
+      var hObj = null;
+      function initPayform(){
+        hObj = new Heartland.HPS({
+            publicKey: publicKey,
+            type: 'iframe',
+            fields: {
+                cardNumber: {
+                    target: 'iframesCardNumber',
+                    placeholder: '•••• •••• •••• ••••'
+                },
+                cardExpiration: {
+                    target: 'iframesCardExpiration',
+                    placeholder: 'MM / YYYY'
+                },
+                cardCvv: {
+                    target: 'iframesCardCvv',
+                    placeholder: 'CVV'
+                },
+                submit: {
+                    value: 'Checkout',
+                    target: 'process-heartland'
+                }
+            },
+            style: window.heartlandCss,
+            onTokenSuccess: function (resp) {
+              console.log('S', resp);
+                //$rootScope.$emit('HeartlandSuccessCase', JSON.stringify(resp));
+            },
+            onTokenError: function (resp) {
+                console.log('Heartland Error', resp);
+                //$rootScope.heartlandError = resp.error.message;
+            }
+        });
+      }
+    </script>
+  </head>
+  <body >
+    <div>
+      <form type="post">
+        <div class="row">
+          <div class="lab">Card Number</div>
+          <div class="inp"><input type="text" id="iframesCardNumber"/></div>
+        </div>
+        <div class="row">
+          <div class="lab">Expiration</div>
+          <div class="inp"><input type="text" id="iframesCardExpiration"/></div>
+        </div>
+        <div class="row">
+          <div class="lab">CVV</div>
+          <div class="inp"><input type="text" id="iframesCardCvv"/></div>
+        </div>
+        <div class="row">
+          <div class="inp"><input type="submit" id="process-heartland" value="Submit"/></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
