@@ -89,10 +89,12 @@
             style: window.heartlandCss,
             onTokenSuccess: function (resp) {
               console.log('S', resp);
-                //$rootScope.$emit('HeartlandSuccessCase', JSON.stringify(resp));
+              location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
+              //$rootScope.$emit('HeartlandSuccessCase', JSON.stringify(resp));
             },
             onTokenError: function (resp) {
                 console.log('Heartland Error', resp);
+                location.href = "./error.html#e="+resp.error.message;
                 //$rootScope.heartlandError = resp.error.message;
             }
         });
