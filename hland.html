@@ -63,7 +63,7 @@
     'margin-top': '10px',
     'border-style': 'solid'
   }};
-      var pkey = location.hash.split("=");
+      var pkey = location.hash.split("=")[1];
       function initPayform(){
         hObj = new Heartland.HPS({
             publicKey: pkey,
