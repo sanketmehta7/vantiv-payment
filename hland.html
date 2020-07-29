@@ -201,7 +201,10 @@
             style: window.heartlandCss,
             onTokenSuccess: function (resp) {
               console.log('S', resp);
-              location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
+              setTimeout(function(){
+                location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
+              },3000);
+              //location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
               //$rootScope.$emit('HeartlandSuccessCase', JSON.stringify(resp));
             },
             onTokenError: function (resp) {
