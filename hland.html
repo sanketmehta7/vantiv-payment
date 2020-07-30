@@ -202,7 +202,7 @@
             onTokenSuccess: function (resp) {
               console.log('S', resp);
               setTimeout(function(){
-                location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
+                location.href = "./thanks.html#t="+JSON.stringify(resp);
               },3000);
               //location.href = "./thanks.html#t="+resp.token_value+"&lf="+resp.last_four;
               //$rootScope.$emit('HeartlandSuccessCase', JSON.stringify(resp));
