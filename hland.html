@@ -13,6 +13,26 @@
           background-size: 280px 34px;
           margin-bottom: 7px;
       }
+      .heartland-field {
+        font-family: sans-serif;
+        box-sizing: border-box;
+        display: block;
+        height: 50px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        width: 300px;
+        margin: 3px 0 5px;
+      }
     </style>
     <script type="text/javascript">
       if(!document.getElementById('hScript')){
@@ -233,7 +253,7 @@
         </div>
         <div class="row">
           <div class="lab">Zipcode</div>
-          <div class="inp"><div type="number" maxlength="8" id="iframesCardZip"></div></div>
+          <div class="inp"><input type="number" maxlength="8" id="iframesCardZip" class="heartland-field"></div>
         </div>
         <div class="row">
           <div class="inp"><div type="submit" id="process-heartland" value="Submit"></div></div>
